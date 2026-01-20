@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="University Bible Church – Independent Bible Teaching Church in Westwood, Los Angeles. Ancient Church. Ancient Faith. Eternal Truth. Join us for expository preaching and fellowship.">
+  <meta name="theme-color" content="#12100d">
+  <title>University Bible Church</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #12100d;
+      --bg-panel: #1a1713;
+      --bg-soft: #211d18;
+      --text-primary: #f2eadf;
+      --text-muted: #d0c5b5;
+      --text-dim: #9e9484;
+      --accent-gold: #c6a15b;
+      --accent-gold-soft: #9f844a;
+      --accent-red: #a33b3b;
+      --border: rgba(198,161,91,.18);
+      --shadow: 0 12px 32px rgba(0,0,0,0.55);
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .container { max-width: 1180px; margin: auto; padding: 0 20px; }
+    a { color: var(--accent-gold); text-decoration: none; }
+
+    .skip-link {
+      position: absolute; top: -50px; left: 12px;
+      background: var(--accent-gold); color: #111;
+      padding: 8px 16px; z-index: 9999; font-weight: 500;
+    }
+    .skip-link:focus { top: 8px; }
+
+    header { border-bottom: 1px solid var(--border); position: relative; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    .logo { font-family: "Cormorant Garamond", serif; font-size: 28px; letter-spacing: .5px; }
+
+    nav.desktop-nav a { margin-left: 24px; font-size: 13.5px; color: var(--text-muted); transition: color 0.3s, transform 0.3s; }
+    nav.desktop-nav a:hover { color: var(--accent-gold); transform: scale(1.1); }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      color: var(--text-primary); font-size: 26px; cursor: pointer; padding: 8px;
+    }
+
+    .hero {
+      padding: 130px 0 150px; text-align: center;
+      background: linear-gradient(rgba(18,16,13,.89), rgba(18,16,13,.96)),
+                  url("https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d") center/cover no-repeat;
+      animation: hero-bg 25s infinite alternate;
+    }
+    @keyframes hero-bg {
+      0% { background-position: center top; }
+      100% { background-position: center bottom; }
+    }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: 54px; margin-bottom: 16px; line-height: 1.1; animation: fadeInUp 1s ease-out; }
+    .hero .tagline { font-size: 20px; color: var(--accent-gold); margin: 0 0 24px; font-family: "Lora", serif; letter-spacing: 1px; animation: fadeInUp 1.2s ease-out; }
+    .hero p { max-width: 700px; margin: auto; color: var(--text-muted); font-size: 17px; line-height: 1.6; animation: fadeInUp 1.4s ease-out; }
+    .hero .btn {
+      display: inline-block; margin-top: 32px; padding: 13px 32px;
+      border: 1px solid var(--accent-gold); color: var(--accent-gold);
+      text-transform: uppercase; letter-spacing: 1.4px; font-size: 12.5px;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+    }
+    .hero .btn:hover { background: var(--accent-gold); color: var(--bg-main); transform: translateY(-3px); }
+
+    section { padding: 100px 0; }
+    section:nth-child(odd)  { background: var(--bg-soft); }
+    section:nth-child(even) { background: var(--bg-main); }
+
+    .section-title {
+      font-family: "Playfair Display", serif; font-size: 36px;
+      margin-bottom: 16px; text-align: center; letter-spacing: 0.3px;
+      animation: bounceIn 1s ease-out;
+    }
+    .section-intro {
+      max-width: 740px; color: var(--text-muted);
+      margin: 0 auto 2.2rem; text-align: center; font-size: 15.5px;
+    }
+
+    .quote {
+      font-style: italic;
+      color: var(--accent-gold-soft);
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-left: 4px solid var(--accent-gold);
+      background: rgba(198,161,91,0.05);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { opacity: 1; transform: scale(1.05); }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s, box-shadow 0.4s;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.7); }
+
+    .card h3 {
+      font-family: "Lora", serif;
+      font-size: 24px;
+      margin-bottom: 1.4rem;
+      color: var(--accent-gold);
+    }
+
+    .card p, .card ul {
+      font-size: 14.8px;
+      margin-bottom: 1.1rem;
+    }
+
+    .card ul { list-style: none; padding-left: 0; }
+    .card li { margin-bottom: 0.9rem; position: relative; padding-left: 24px; }
+    .card li::before { content: "✝"; position: absolute; left: 0; color: var(--accent-gold); font-size: 18px; }
+
+    .image-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      animation: pulse 3s infinite;
+    }
+
+    #contact-map {
+      padding: 80px 0;
+      background: var(--bg-soft);
+    }
+
+    .contact-map-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contact-map-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .contact-map-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.7);
+    }
+
+    .contact-map-card h3 {
+      font-family: "Lora", serif;
+      font-size: 28px;
+      margin-bottom: 1.6rem;
+      color: var(--accent-gold);
+      text-align: center;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #contact input, #contact textarea {
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-size: 15px;
+      border-radius: 6px;
+    }
+    #contact button {
+      padding: 14px 40px;
+      background: var(--accent-gold);
+      border: none;
+      color: var(--bg-main);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      align-self: center;
+      margin-top: 12px;
+    }
+    #contact button:hover { background: var(--accent-gold-soft); transform: scale(1.05); }
+
+    .cta-button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 16px 48px;
+      background: var(--accent-red);
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      font-size: 16px;
+      text-align: center;
+      animation: pulse 2s infinite;
+      width: fit-content;
+    }
+
+    .mini-map {
+      text-align: center;
+    }
+    .mini-map iframe {
+      width: 100%;
+      height: 420px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    footer {
+      padding: 90px 0 50px; background: #0c0a08;
+      border-top: 1px solid var(--border); color: var(--text-dim);
+      font-size: 13.5px; text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-map-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .mini-map iframe {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; gap: 32px; }
+      .menu-toggle { display: block; }
+      .desktop-nav { display: none; }
+      .hero { padding: 90px 0 110px; }
+      .hero h1 { font-size: 42px; }
+      .mobile-nav[hidden] { display: none; }
+      .mobile-nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-panel); padding: 20px; border-top: 1px solid var(--border); }
+      .mobile-nav a { display: block; padding: 12px 0; font-size: 15px; }
+      section { padding: 70px 0; }
+      .section-title { font-size: 32px; }
+      #contact-map { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">University Bible Church</div>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="desktop-nav">
+        <a href="#about">About</a>
+        <a href="#beliefs">Beliefs</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#visit">Visit</a>
+        <a href="#calendar">Calendar</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <nav class="mobile-nav" hidden aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#beliefs">Beliefs</a>
+      <a href="#sermons">Sermons</a>
+      <a href="#visit">Visit</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <h1>Bible Teaching Church<br>in Westwood, California</h1>
+        <div class="tagline">ANCIENT CHURCH. ANCIENT FAITH. ETERNAL TRUTH.</div>
+        <p>We are an independent Protestant church committed to Christ-honoring, Bible-teaching ministry — welcoming all to worship, study, and fellowship in the Word of God. To all who worship with us we extend a cordial welcome in the Name of Christ the Lord.</p>
+        <a href="#visit" class="btn">Join Us This Sunday</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Previous sections remain unchanged -->
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Who We Are</h2>
+        <p class="section-intro">University Bible Church is an independent Evangelical Bible Teaching Christian church in the Protestant tradition, located in Westwood, Los Angeles. Founded to serve Bible-believing residents and UCLA students, we emphasize expository preaching and gracious hospitality.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Our History</h3>
+            <p>Founded in the 1920s-1930s (property since 1928, organized 1931 originally as Presbyterian, later undenominational Bible Church). For nearly a century at Wilshire & Malcolm, once the tallest building in Westwood. Committed to uniting believers through the teaching of God's Word.</p>
+            <div class="quote">"Combining the warmth of a gracious Christian hospitality with the fervor of a personal, devotional application of the great doctrines and eternal truths of God's Word..." — Milo F. Jamison, Founder</div>
+          </div>
+          <div class="card">
+            <h3>Our Mission</h3>
+            <p>To glorify God through Christ-honoring, Bible-teaching ministry, maintaining balance — avoiding fanatical cultism or modernistic neo-orthodoxy. We focus on the exposition of Scripture as the power for salvation and Christian living.</p>
+            <div class="quote">"The great need across evangelicalism is exposition of the Scriptures." — J Dwight Pentecost</div>
+          </div>
+          <div class="card">
+            <h3>Leadership</h3>
+            <p>Senior Pastor: Bryan Moselle (third-generation Angeleno, serving since 2016). We value lay service and the call for Christians to serve in every sphere of life.</p>
+            <div class="quote">"Christians are called to God's service not only in church professions but also in every secular calling." — J Gresham Machen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beliefs" class="bg-soft">
+      <div class="container">
+        <h2 class="section-title">Articles of Faith</h2>
+        <p class="section-intro">We hold to the historic Christian faith, including the inerrancy of Scripture, the Trinity, the deity and saving work of Jesus Christ, salvation by grace through faith, and a premillennial eschatology.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Core Beliefs</h3>
+            <ul>
+              <li>The Bible is the inspired, inerrant Word of God in its original manuscripts.</li>
+              <li>The Trinity: One God in three Persons — Father, Son, Holy Spirit.</li>
+              <li>Jesus Christ: Fully God and fully man; His virgin birth, sinless life, atoning death, bodily resurrection, ascension, and literal return.</li>
+              <li>Salvation by grace through personal faith in Jesus Christ alone.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Eschatology</h3>
+            <p>We teach premillennialism: Christ will return literally to establish His kingdom on earth, fulfilling Israel's covenants, reigning for 1,000 years before transferring the kingdom to the Father (Rev 20–21; 1 Cor 15:24-25).</p>
+            <div class="quote">"We must meet the present situation, and we must speak a word to the world that no one else can speak." — D Martyn Lloyd-Jones</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sermons">
+      <div class="container">
+        <h2 class="section-title">Recent Sermons</h2>
+        <p class="section-intro">Expository Bible teaching is central to our ministry. Listen to recent messages online via our sermon archive.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Opening the Scroll: Jesus Saves us from the Wrath to Come</h3>
+            <p>January 18, 2026 — University Bible Church</p>
+            <a href="https://sermons.logos.com/profile/2669404" class="btn" target="_blank">View Sermons</a>
+          </div>
+          <div class="card">
+            <h3>A New Song for a Renewed World</h3>
+            <p>January 11, 2026 — University Bible Church</p>
+            <a href="https://sermons.logos.com/profile/2669404" class="btn" target="_blank">Listen Online</a>
+          </div>
+          <div class="card">
+            <h3>More Messages</h3>
+            <p>Explore our full archive of verse-by-verse Bible teaching.</p>
+            <div class="image-container">
+              <img src="https://images.unsplash.com/photo-1583241475880-083f84372725" alt="Open Bible and Preaching">
+            </div>
+            <a href="https://sermons.logos.com/profile/2669404" class="btn" target="_blank">Sermon Archive</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="container">
+        <h2 class="section-title">Visit Us This Sunday</h2>
+        <p class="section-intro">You will be welcomed by a warm and friendly congregation. Come experience Bible-centered worship and fellowship.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Service Times</h3>
+            <p><strong>Morning Worship Service</strong><br>Sundays at 11:00 AM – Main Sanctuary</p>
+            <p><strong>All Church Lunch</strong><br>Sundays at 12:15 PM – Family Room<br><em>Everyone is welcome! Join us for fellowship and a meal.</em></p>
+            <p><strong>Afternoon Adult Bible Study</strong><br>Sundays at 12:45 PM – Patio Room (TBA)</p>
+            <p><strong>Wednesday Night Bible Study</strong><br>Wednesdays 7:30 PM – 8:30 PM – Meets at UBC (verse-by-verse study, e.g., Book of Matthew)</p>
+          </div>
+          <div class="card">
+            <h3>Location & Directions</h3>
+            <p><strong>University Bible Church</strong><br>10801 Wilshire Boulevard<br>Los Angeles, California 90024</p>
+            <p>Northwest corner of Malcolm Ave. and Wilshire Blvd.<br>Main entrance on Malcolm Ave. Ample parking nearby.</p>
+            <p style="margin-top: 1.6rem;"><strong>Contact</strong><br>Phone: 310.474.9065<br>Email: info@UniversityBibleChurch.com</p>
+            <div class="image-container">
+              <img src="https://images.unsplash.com/photo-1517487883043-06c27d8fd6e1" alt="Church Congregation">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <p class="section-intro">Stay connected — from weekly services to Bible studies and more.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Wednesday Night Bible Study</h3>
+            <p>Next: January 21, 2026 at 7:30 PM – 8:30 PM<br>Mid-week verse-by-verse study. Contact office for details.</p>
+            <a href="https://www.universitybiblechurch.com/calendar/" class="btn" target="_blank">Full Calendar</a>
+          </div>
+          <div class="card">
+            <h3>Sunday Morning Service</h3>
+            <p>Next: January 25, 2026 at 11:00 AM – 12:15 PM<br>Worship in the main sanctuary followed by lunch and study.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New side-by-side Contact + Mini Map section just before footer -->
+    <section id="contact-map">
+      <div class="container">
+        <div class="contact-map-wrapper">
+          
+          <!-- Contact Us Card -->
+          <div class="contact-map-card" id="contact">
+            <h3>Contact Us</h3>
+            <p class="section-intro" style="text-align: center; margin-bottom: 2rem;">We'd love to connect! Reach out with questions, prayer requests, or to learn how to get involved.</p>
+            <form action="https://formspree.io/f/yourformid" method="POST">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+            <a href="mailto:info@UniversityBibleChurch.com" class="cta-button">Email Us Today!</a>
+          </div>
+
+          <!-- Mini Map Card -->
+          <div class="contact-map-card mini-map">
+            <h3>Find Us</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.387!2d-118.442477!3d34.058690!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc8f8f8f8f8f%3A0x8f8f8f8f8f8f8f8f!2s10801%20Wilshire%20Blvd%2C%20Los%20Angeles%2C%20CA%2090024!5e0!3m2!1sen!2sus!4v1730000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      University Bible Church • 10801 Wilshire Boulevard, Los Angeles, CA 90024<br>
+      Phone: 310.474.9065 • Email: info@UniversityBibleChurch.com<br>
+      © 2026 — Ancient Church. Ancient Faith. Eternal Truth.<br>
+      <a href="https://www.universitybiblechurch.com/" target="_blank">Visit Official Site</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      const nav = document.querySelector('.mobile-nav');
+      const toggle = document.querySelector('.menu-toggle');
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      nav.hidden = expanded;
+      toggle.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>
+</html>
